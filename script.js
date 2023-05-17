@@ -39,7 +39,7 @@ function desmembrar(letra){
 }
 
 function feedback(){
-    let text2 = document.createTextNode(`Voce tem ${chances} chances`);
+    let text2 = document.createTextNode(`A palavra possui ${palavra.length} letras. Voce tem ${chances} chances`);
     chance.append(text2);
     if(palavraArr.toString() === palavra.toString()){
         chance.innerHTML = 'VENCEU!';
@@ -62,7 +62,7 @@ click.addEventListener('click', function() {
 });
 
 function jogoDaVelha(){
-    let letra = document.getElementById('letra').value;
+    let letra = document.getElementById('letra').value.toLowerCase();
     if(palavraArr.toString() === palavra.toString()) return;
     if(chances === 0) return;
     console.log(palavraArr);
